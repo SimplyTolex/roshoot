@@ -48,9 +48,9 @@ def button_creator(count):
             # If, however, we add an even numbered button,
             # then we will add 0,5 and the button will be shifted
             current_button.place(rely=0.5 + ((0.5 / (count / 2)) * (i // 2)),
-                                relx=0.05 + 0.5 * (i % 2),
-                                relwidth=0.4,
-                                relheight=0.5 / (count / 2) - 0.05)
+                                 relx=0.05 + 0.5 * (i % 2),
+                                 relwidth=0.4,
+                                 relheight=0.5 / (count / 2) - 0.05)
             button_list.append(current_button)
     else:       # TODO: make odd number of answers look pretty
         error_label.config(text="Unable to create odd number of buttons!")
