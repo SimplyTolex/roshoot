@@ -1,4 +1,4 @@
-# About this branch
+# About this branch (`visual-overhaul`)
 
 Here is where a visual overhaul of a program will be made.
 
