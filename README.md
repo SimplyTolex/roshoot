@@ -1,3 +1,14 @@
+# About this branch
+
+Here is where a visual overhaul of a program will be made.
+
+It will probably include:
+
+- Cool customisable purple background (because I like purple)
+- Colorful buttons with a slight 3D effect (a throwback to original tk buttons)
+- New font?
+
+---
 
 # ROSHOOT?
 
