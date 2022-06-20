@@ -32,13 +32,6 @@ class Question():
         self.ans = self_ans
 
 
-default_question_1 = Question("кто такой форд", ["фокус", "это они а не я", "твое имя", "я"])
-questions_list.append(default_question_1)
-
-default_question_2 = Question("на чём написан РОСХУТ?", ["питон", "кобол"])
-questions_list.append(default_question_2)
-
-
 def button_creator(count):
     global error_label
     if count % 2 == 0:
@@ -59,6 +52,7 @@ def button_creator(count):
 def question_render(current_question, is_answer_correct):
 
     global player_score
+    global back_to_title_button
 
     if is_answer_correct:
         player_score += 1
@@ -90,17 +84,29 @@ def question_render(current_question, is_answer_correct):
         for i in button_list:
             i.destroy()
         question_label.config(text="Поздравляем!\nПравильных ответов:\n" + str(player_score) + " / " + str(len(questions_list)))        # TODO: make it fString instead to reduce clutter
+        # TODO: WHAT THE HELL IS GOIN *MEEEEDIC* ON?!?!?!
+        # * If you remove these lines below (just like they are right now), everything will work fine. There is something with these lines that breaks everything, probably the () in the command, as they are whack in tk
+        # back_to_title_button = Button(text="Назад в главное меню", command=load_main_menu(True))
+        # back_to_title_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.8)
 
 
-def start_game():
+def start_game(repeat_flag):
+    global choose_file_button
+    global chosen_file_label
+    global start_button
+    global back_to_title_button
+    
     choose_file_button.destroy()
     chosen_file_label.destroy()
     start_button.destroy()
+    if repeat_flag:
+        back_to_title_button.destroy()
     question_render(0, False)   # send False to question_render so it won't trigger anything
 
 
 def file_manager():
     global error_label
+    
     f = open(filedialog.askopenfilename(), "r", encoding="utf-8")
     # print(f)      # sends filepath to debug console
     questions_list.clear()
@@ -119,9 +125,38 @@ def file_manager():
             pass    # TODO: add comment functionality
         else:       # if this line is answer
             questions_list[question_number].ans.append(currentLine)
-    chosen_file_label.config(text="Выбран файл: " + str(f)[25:len(str(f))-28])
     f.close()
+    
+    if question_flag:
+        chosen_file_label.config(text="Выбран файл: " + str(f)[25:len(str(f))-28])
+        start_button.config(text="Начать викторину!", state=NORMAL)
+    else:
+        chosen_file_label.config(text="Выбран недействительный файл")
 
+
+def load_main_menu(repeat_flag):
+    global question_label
+    global chosen_file
+    global choose_file_button
+    global chosen_file_label
+    global start_button
+   
+    question_label = Label(root, font=("Arial", "30"))
+    question_label.place(relx=0.05, rely=0.05, relwidth=0.9, relheight=0.4)
+
+    chosen_file = "Выберете файл, чтобы начать викторину!"
+    choose_file_button = Button(root, text="Открыть файл с вопросами", command=file_manager)
+    choose_file_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.6)
+
+    chosen_file_label = Label(root, text=chosen_file)
+    chosen_file_label.place(relwidth=1, relheight=0.1, relx=0, rely=0.7)
+
+    if repeat_flag:
+        start_button = Button(root, text="Сперва выберете файл...", command=(lambda: start_game(True)), state=DISABLED)
+        start_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.8)
+    else:
+        start_button = Button(root, text="Сперва выберете файл...", command=(lambda: start_game(False)), state=DISABLED)
+        start_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.8)
 
 root = Tk()
 root.geometry("640x480")
@@ -130,17 +165,6 @@ root.title("ROSHOOT? CLIENT v0.3")      # TODO: move version number into conf fi
 error_label = Label(text="")
 error_label.pack()
 
-question_label = Label(root, font=("Arial", "30"))
-question_label.place(relx=0.05, rely=0.05, relwidth=0.9, relheight=0.4)
-
-chosen_file = "Выбраны стандартные вопросы (выберите свои с помощью кнопки сверху)"
-choose_file_button = Button(root, text="Открыть файл с вопросами", command=file_manager)
-choose_file_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.6)
-
-chosen_file_label = Label(root, text=chosen_file)
-chosen_file_label.place(relwidth=1, relheight=0.1, relx=0, rely=0.7)
-
-start_button = Button(root, text="Начать викторину!", command=start_game)
-start_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.8)
+load_main_menu(False)
 
 root.mainloop()

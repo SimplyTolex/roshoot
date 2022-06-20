@@ -8,7 +8,13 @@ It will probably include:
 - Colorful buttons with a slight 3D effect (a throwback to original tk buttons)
 - New font?
 
----
+# Changes in the branch so far
+
+- 6/20/2022
+  - tried to add "return to title" button, it didn't worked.
+  - also separated default ~~meme~~ questions from the code into `questions/default.txt` so they can still be loaded, if necessary.
+
+-----
 
 # ROSHOOT?
 
