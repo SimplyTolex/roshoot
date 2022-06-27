@@ -15,14 +15,20 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+from encodings import utf_8
 from tkinter import *
 import random
 from tkinter import filedialog
+import yaml
 
 button_list = []
 questions_list = []
 right_answer = ""
 player_score = 0
+
+# reading config.yaml
+with open('cfg/config.yaml', 'r') as yaml_file:
+    cfg = yaml.safe_load(yaml_file)
 
 
 class Question():
@@ -106,7 +112,7 @@ def start_game(repeat_flag):
 def file_manager():
     global error_label
     
-    f = open(filedialog.askopenfilename(), "r", encoding="utf-8")
+    f = open(filedialog.askopenfilename(), "r", encoding="utf-8")       # TODO: if the user open the dialog, then choses nothing (by just closing the window), the app will throw an error
     # print(f)      # sends filepath to debug console
     questions_list.clear()
     question_number = -1
@@ -161,7 +167,7 @@ def load_main_menu(repeat_flag):
 
 root = Tk()
 root.geometry("640x480")
-root.title("ROSHOOT? CLIENT v0.3")      # TODO: move version number into conf file (that doesn't exist yet)
+root.title(f"ROSHOOT? CLIENT v{cfg['program']['version']}")
 
 error_label = Label(text="")
 error_label.pack()
