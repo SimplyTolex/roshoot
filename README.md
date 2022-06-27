@@ -1,11 +1,3 @@
-# About this branch (`config-test`)
-
-Here I will try to implement yaml config into my program.
-
-It's funny how when you decided to do some visual improvments to the program, you are doing anything but them. Oh well...
-
------
-
 # ROSHOOT?
 
 An open-source Python application for holding a quiz or trivia.
