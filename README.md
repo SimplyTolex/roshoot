@@ -1,21 +1,8 @@
-# About this branch (`visual-overhaul`)
+# About this branch (`config-test`)
 
-Here is where a visual overhaul of a program will be made.
+Here I will try to implement yaml config into my program.
 
-It will probably include:
-
-- Cool customisable purple background (because I like purple)
-- Colorful buttons with a slight 3D effect (a throwback to original tk buttons)
-- New font?
-
-# Changes in the branch so far
-
-- 6/20/2022
-  - tried to add "return to title" button, it didn't worked.
-  - also separated default ~~meme~~ questions from the code into `questions/default.txt` so they can still be loaded, if necessary.
-- 6/27/2022
-  - due separating the default questions from the program, now it's impossible to start a quiz without a file (todo line removed)
-  - quiz ending line is now using fstrings to reduce clutter in the code
+It's funny how when you decided to do some visual improvments to the program, you are doing anything but them. Oh well...
 
 -----
 
