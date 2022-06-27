@@ -23,7 +23,6 @@ button_list = []
 questions_list = []
 right_answer = ""
 player_score = 0
-# FileValid = False     TODO: Disable button if file is invalid
 
 
 class Question():
@@ -83,9 +82,9 @@ def question_render(current_question, is_answer_correct):
     else:       # if we ran out of questions, destroy everyting and show the so called 'end screen'
         for i in button_list:
             i.destroy()
-        question_label.config(text="Поздравляем!\nПравильных ответов:\n" + str(player_score) + " / " + str(len(questions_list)))        # TODO: make it fString instead to reduce clutter
+        question_label.config(text=f"Поздравляем!\nПравильных ответов:\n {player_score} / {len(questions_list)}")
         # TODO: WHAT THE HELL IS GOIN *MEEEEDIC* ON?!?!?!
-        # * If you remove these lines below (just like they are right now), everything will work fine. There is something with these lines that breaks everything, probably the () in the command, as they are whack in tk
+        # * If you remove these lines below (just like they are right now), everything will work fine. There is something with these lines that breaks everything, probably the () in the command, as they are wacky in tk
         # back_to_title_button = Button(text="Назад в главное меню", command=load_main_menu(True))
         # back_to_title_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.8)
 
@@ -123,6 +122,8 @@ def file_manager():
             error_label.config(text="QuestionsFile Syntax Error: there is no question to add answer to!")
         elif currentLine[0] == "#":     # if this line is comment
             pass    # TODO: add comment functionality
+                    # Actually, the better goal will be to make use of some already well defined format like yaml or ini or something else
+                    
         else:       # if this line is answer
             questions_list[question_number].ans.append(currentLine)
     f.close()

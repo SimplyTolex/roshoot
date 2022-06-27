@@ -13,6 +13,9 @@ It will probably include:
 - 6/20/2022
   - tried to add "return to title" button, it didn't worked.
   - also separated default ~~meme~~ questions from the code into `questions/default.txt` so they can still be loaded, if necessary.
+- 6/27/2022
+  - due separating the default questions from the program, now it's impossible to start a quiz without a file (todo line removed)
+  - quiz ending line is now using fstrings to reduce clutter in the code
 
 -----
 
