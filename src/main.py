@@ -15,7 +15,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-from encodings import utf_8
 from tkinter import *
 import random
 from tkinter import filedialog
