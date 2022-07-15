@@ -1,2 +1,4 @@
+If you try to open a file without the required syntax, it won't work.
+
 Это фейковый вопрос
 Это фейковый ответ
