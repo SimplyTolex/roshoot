@@ -127,7 +127,7 @@ def file_manager():
             error_label.config(text="QuestionsFile Syntax Error: there is no question to add answer to!")
         elif currentLine[0] == "#":     # if this line is comment
             pass    # TODO: add comment functionality
-                    # * Actually, the better goal will be to make use of some already well defined format like yaml or ini or something else
+                    # Actually, the better goal will be to make use of some already well defined format like yaml or ini or something else
 
         else:       # if this line is answer
             questions_list[question_number].ans.append(currentLine)
