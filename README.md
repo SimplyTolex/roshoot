@@ -8,7 +8,7 @@ An open-source Python application for holding a quiz or trivia.
 
 The app started as a small project in my bootcamp, but then I decided to try to make a real project from it. The idea of name `ROSHOOT?` is a bit of a meme, maybe I will change it later.
 
-In `ROSHOOT?` you can make a small little quiz and then completing it in the app. For *now*, that's all there is too it, hovewer, I hope I would be able to improve it and make the app more feature-rich.
+In `ROSHOOT?` you can make a small little quiz and then complete it in the app. For *now*, that's all there is too it, hovewer, I hope I would be able to improve it and make the app more feature-rich.
 
 # Features
 
