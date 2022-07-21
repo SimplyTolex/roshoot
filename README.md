@@ -54,6 +54,6 @@ You may [open an issue with a `documentation` label](https://github.com/SimplyTo
 
 On the other note, you can try to fix it yourself! (there is supposed to be a link but there is nothing currently)
 
-### I have a suggestion, how I should share it?
+### I have a suggestion, how I do share it?
 
 If you are just throwing an idea out, you can create a discussion in `Ideas` category. Then, one can present the finalised idea in an issue with an `idea` label.
