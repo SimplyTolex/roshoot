@@ -1,11 +1,11 @@
-# v0.3 (first verison)
+# v0.3-dev (first public verison)
 
-- features:
+- **features:**
   - can read quizes from specially formatted files.
 
 ## commit `dda9f18` (6/20/2022)
 
-- added:
+- **added:**
   - tried to add "return to title" button, it didn't worked;
   - also separated default ~~meme~~ questions from the code into `questions/default.txt` so they can still be loaded, if necessary.
 
@@ -13,13 +13,18 @@
 
 - due separating the default questions from the program, now it's impossible to start a quiz without a file (todo line removed).
 
-- added:
+- **added:**
   - quiz ending line is now using fstrings to reduce clutter in the code.
 
-# v0.4
+# v0.4-dev
 
-- changes:
+- **changes:**
   - slightly improved source code because of fstrings.
 
-- added:
+- **added:**
   - now the app is using `.yaml` configuration file. It's not doing much right now but it will have more uses later on.
+
+# v0.4.1-dev
+
+- small miscellaneous changes in comments;
+  - but there were bigger changes in the repo itself and other files.

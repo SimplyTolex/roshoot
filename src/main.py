@@ -88,8 +88,8 @@ def question_render(current_question, is_answer_correct):
         for i in button_list:
             i.destroy()
         question_label.config(text=f"Поздравляем!\nПравильных ответов:\n {player_score} / {len(questions_list)}")
-        # TODO: WHAT THE HELL IS GOIN *MEEEEDIC* ON?!?!?!
-        # * If you remove these lines below (just like they are right now), everything will work fine. There is something with these lines that breaks everything, probably the () in the command, as they are wacky in tk
+        # TODO: stuff gets destroyed and therefore doesn't work anymore:
+        # If you remove these lines below (just like they are right now), everything will work fine. There is something with these lines that breaks everything, probably the () in the command, as they are wacky in tk.
         # back_to_title_button = Button(text="Назад в главное меню", command=load_main_menu(True))
         # back_to_title_button.place(relwidth=0.5, relheight=0.1, relx=0.25, rely=0.8)
 
@@ -99,7 +99,7 @@ def start_game(repeat_flag):
     global chosen_file_label
     global start_button
     global back_to_title_button
-    
+
     choose_file_button.destroy()
     chosen_file_label.destroy()
     start_button.destroy()
@@ -110,7 +110,7 @@ def start_game(repeat_flag):
 
 def file_manager():
     global error_label
-    
+
     f = open(filedialog.askopenfilename(), "r", encoding="utf-8")       # TODO: if the user open the dialog, then choses nothing (by just closing the window), the app will throw an error
     # print(f)      # sends filepath to debug console
     questions_list.clear()
@@ -127,12 +127,12 @@ def file_manager():
             error_label.config(text="QuestionsFile Syntax Error: there is no question to add answer to!")
         elif currentLine[0] == "#":     # if this line is comment
             pass    # TODO: add comment functionality
-                    # Actually, the better goal will be to make use of some already well defined format like yaml or ini or something else
-                    
+                    # * Actually, the better goal will be to make use of some already well defined format like yaml or ini or something else
+
         else:       # if this line is answer
             questions_list[question_number].ans.append(currentLine)
     f.close()
-    
+
     if question_flag:
         chosen_file_label.config(text="Выбран файл: " + str(f)[25:len(str(f))-28])
         start_button.config(text="Начать викторину!", state=NORMAL)
@@ -146,7 +146,7 @@ def load_main_menu(repeat_flag):
     global choose_file_button
     global chosen_file_label
     global start_button
-   
+
     question_label = Label(root, font=("Arial", "30"))
     question_label.place(relx=0.05, rely=0.05, relwidth=0.9, relheight=0.4)
 

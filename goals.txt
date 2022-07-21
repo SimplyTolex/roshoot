@@ -1,2 +1,0 @@
-- split the functions into modules by separating them
-- migrate to a more reasonble format for questions

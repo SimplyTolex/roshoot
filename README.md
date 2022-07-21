@@ -52,6 +52,8 @@ It will, but it doesn't right now. I will add this sometime later.
 
 You may [open an issue with a `documentation` label](https://github.com/SimplyTolex/roshoot/issues/new?labels=documentation). It will be fixed soon if you point out it to me. English is not my first language, so it can be difficult to me to write these detailed descriptions.
 
+On the other note, you can try to fix it yourself! (there is supposed to be a link but there is nothing currently)
+
 ### I have a suggestion, how I should share it?
 
 If you are just throwing an idea out, you can create a discussion in `Ideas` category. Then, one can present the finalised idea in an issue with an `idea` label.
