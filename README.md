@@ -25,7 +25,7 @@ The FAQ is split up in two sections, the first one, with how-to questions, and t
 
 As of v0.4, the project is just one Python file. You can just download the source code, and run the app with Python installed.
 
-- Download the code using the green `Code` button in the repo --> `Download ZIP`. Then, unzip the archive; 
+- Download the code using the green `Code` button in the repo --> `Download ZIP`. Then, unzip the archive;
   - If you are planning on contributing later, you can also [clone the github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 - Make sure that you have Python installed on your machine;
 - Run the `main.py` file.
